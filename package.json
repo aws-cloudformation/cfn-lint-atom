@@ -12,6 +12,13 @@
   "dependencies": {
     "atom-linter": "^5.0.2"
   },
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "2.0.0": "provideLinter"
+      }
+    }
+  },
   "readmeFilename": "README.md",
   "devDependencies": {
     "babel-eslint": "latest",
