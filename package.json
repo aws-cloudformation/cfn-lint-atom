@@ -1,0 +1,41 @@
+{
+  "name": "atom-cfn-lint",
+  "main": "./lib/atom-cfn-lint",
+  "version": "0.1.0",
+  "description": "A short description of your package",
+  "keywords": [],
+  "repository": "https://github.com/awslabs/aws-cfn-lint-atom",
+  "license": "Apache-2.0",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "atom-linter": "^5.0.2"
+  },
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "2.0.0": "provideLinter"
+      }
+    }
+  },
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "babel-eslint": "latest",
+    "eslint": "^4.19.1"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "rules": {
+      "strict": 0
+    },
+    "env": {
+      "es6": true,
+      "browser": true,
+      "node": true
+    },
+    "globals": {
+      "atom": true
+    }
+  }
+}
