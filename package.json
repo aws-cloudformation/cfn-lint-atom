@@ -10,8 +10,10 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-    "atom-linter": "^5.0.2"
+    "atom-linter": "^5.0.2",
+    "atom-package-deps": "^4.6.0"
   },
+  "package-deps": [ "linter" ],
   "providedServices": {
     "linter": {
       "versions": {
