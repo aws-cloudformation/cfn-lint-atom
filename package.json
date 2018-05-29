@@ -1,7 +1,7 @@
 {
   "name": "atom-cfn-lint",
   "main": "./lib/atom-cfn-lint",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A short description of your package",
   "keywords": [],
   "repository": "https://github.com/awslabs/aws-cfn-lint-atom",
@@ -13,7 +13,9 @@
     "atom-linter": "^5.0.2",
     "atom-package-deps": "^4.6.0"
   },
-  "package-deps": [ "linter" ],
+  "package-deps": [
+    "linter"
+  ],
   "providedServices": {
     "linter": {
       "versions": {
