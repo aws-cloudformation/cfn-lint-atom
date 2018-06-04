@@ -319,14 +319,14 @@
                 "SecurityGroupIngress": [
                     {
                         "IpProtocol": "tcp",
-                        "FromPort": "80",
-                        "ToPort": "80",
+                        "FromPort": 80,
+                        "ToPort": 80,
                         "CidrIp": "0.0.0.0/0"
                     },
                     {
                         "IpProtocol": "tcp",
-                        "FromPort": "443",
-                        "ToPort": "443",
+                        "FromPort": 443,
+                        "ToPort": 443,
                         "CidrIp": "0.0.0.0/0"
                     }
                 ]
@@ -364,7 +364,7 @@
                         ]
                     }
                 ],
-                "CrossZone": "true",
+                "CrossZone": true,
                 "HealthCheck": {
                     "Target": "TCP:80",
                     "HealthyThreshold": "2",
@@ -483,24 +483,24 @@
                 "SecurityGroupIngress": [
                     {
                         "IpProtocol": "tcp",
-                        "FromPort": "80",
-                        "ToPort": "80",
+                        "FromPort": 80,
+                        "ToPort": 80,
                         "SourceSecurityGroupId": {
                             "Ref": "ELBSecurityGroup"
                         }
                     },
                     {
                         "IpProtocol": "tcp",
-                        "FromPort": "443",
-                        "ToPort": "443",
+                        "FromPort": 443,
+                        "ToPort": 443,
                         "SourceSecurityGroupId": {
                             "Ref": "ELBSecurityGroup"
                         }
                     },
                     {
                         "IpProtocol": "tcp",
-                        "FromPort": "22",
-                        "ToPort": "22",
+                        "FromPort": 22,
+                        "ToPort": 22,
                         "SourceSecurityGroupId": {
                             "Ref": "BastionSecurityGroupID"
                         }
@@ -537,7 +537,7 @@
                         "AMZNLINUXHVM"
                     ]
                 },
-                "InstanceMonitoring": "true",
+                "InstanceMonitoring": true,
                 "IamInstanceProfile": {
                     "Ref": "SetupRoleProfile"
                 },
@@ -598,7 +598,7 @@
                     "Ref": "WorkloadAutoScalingGroup"
                 },
                 "Cooldown": "300",
-                "ScalingAdjustment": "1"
+                "ScalingAdjustment": 1
             }
         },
         "WorkloadScaleDownPolicy": {
@@ -609,7 +609,7 @@
                     "Ref": "WorkloadAutoScalingGroup"
                 },
                 "Cooldown": "300",
-                "ScalingAdjustment": "-1"
+                "ScalingAdjustment": -1
             }
         },
         "CPUAlarmHigh": {
@@ -619,9 +619,9 @@
                 "MetricName": "CPUUtilization",
                 "Namespace": "AWS/EC2",
                 "Statistic": "Average",
-                "Period": "60",
-                "EvaluationPeriods": "5",
-                "Threshold": "60",
+                "Period": 60,
+                "EvaluationPeriods": 5,
+                "Threshold": 60,
                 "AlarmActions": [
                     {
                         "Ref": "WorkloadScaleUpPolicy"
@@ -645,9 +645,9 @@
                 "MetricName": "CPUUtilization",
                 "Namespace": "AWS/EC2",
                 "Statistic": "Average",
-                "Period": "60",
-                "EvaluationPeriods": "30",
-                "Threshold": "40",
+                "Period": 60,
+                "EvaluationPeriods": 30,
+                "Threshold": 40,
                 "AlarmActions": [
                     {
                         "Ref": "WorkloadScaleDownPolicy"
@@ -679,7 +679,7 @@
                 "DesiredCapacity": {
                     "Ref": "WorkloadNodesDesiredCapacity"
                 },
-                "HealthCheckGracePeriod": "600",
+                "HealthCheckGracePeriod": 600,
                 "HealthCheckType": "EC2",
                 "LaunchConfigurationName": {
                     "Ref": "WorkloadASLaunchConfig"
@@ -713,7 +713,7 @@
                     {
                         "Key": "Name",
                         "Value": "Workload Server cluster node",
-                        "PropagateAtLaunch": "true"
+                        "PropagateAtLaunch": true
                     }
                 ]
             },
