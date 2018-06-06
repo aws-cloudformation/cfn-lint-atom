@@ -1,0 +1,8 @@
+---
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >
+  Template to test overriding the spec file
+Resources:
+  myBucket:
+    Type: AWS::S3::Bucket
+    Properties: {}
