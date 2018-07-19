@@ -15,7 +15,7 @@ Parameters:
       - Test
   TestEnvironment:
     Type: String
-    Default: String
+    Default: Test
     Description: Another Environment
     AllowedValues:
       - Dev
