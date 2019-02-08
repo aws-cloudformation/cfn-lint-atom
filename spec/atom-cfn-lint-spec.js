@@ -48,12 +48,11 @@ describe('The CFN Lint provider for Linter', () => {
 
   beforeEach(async () => {
     atom.workspace.destroyActivePaneItem()
-    waitsForPromise(() =>
-      Promise.all([
-        atom.packages.activatePackage('atom-cfn-lint'),
-        atom.packages.activatePackage('language-json'),
-        atom.packages.activatePackage('language-yaml'),
-      ]))
+    waitsForPromise(() => Promise.all([
+      atom.packages.activatePackage('atom-cfn-lint'),
+      atom.packages.activatePackage('language-json'),
+      atom.packages.activatePackage('language-yaml'),
+    ]))
   })
 
   describe('returns results when lint issues are found', () => {
